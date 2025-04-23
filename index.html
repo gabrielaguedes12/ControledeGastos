@@ -1,13 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Controle de Gastos</title>
-</head>
-<body>
-    
-</body>
-</html>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Controle de Gastos</h1>
+
+      <div class="form">
+        <input type="text" class="nome" placeholder="Nome do gasto" />
+        <input type="number" class="valor" placeholder="Valor(R$):" />
+        <select id="categoria">
+          <option value="">Categoria</option>
+          <option value="Alimentação">Alimentação</option>
+          <option value="Transporte">Transporte</option>
+          <option value="Lazer">Lazer</option>
+          <option value="Outros">Outros</option>
+        </select>
+        <button onclick="adicionarGasto()">Adicionar</button>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Valor</th>
+            <th>Categoria</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      
+      <canvas id="graficoPizza" width="400" height="400"></canvas>
+
+      <div class="botoes">
+        <button onclick="exportarCSV()">Exportar Extrato</button>
+        <button onclick="limparTudo()">Limpar Tudo</button>
+      </div>
+    </div>
+  
+    <script src="script.js"></script>
+  </body>
+  </html>
